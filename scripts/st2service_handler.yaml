@@ -1,0 +1,9 @@
+---
+# st2 credentials. you can either use username/password combo or specify an API key or unauthed.
+st2_api_key: ""
+st2_username: "st2admin"
+st2_password: "Ch@ngeMe"
+st2_api_base_url: "http://st2web/api/v1/"
+st2_auth_base_url: "http://st2web/auth/v1/"
+unauthed: False
+ssl_verify: False

@@ -232,17 +232,28 @@ services:
     dns_search: .
     volumes:
       - stackstorm-redis:/data
+  nagios:
+    image: jasonrivers/nagios
+    ports:
+      - 8082:80
+    networks:
+      - private
+    environment:
+      - NAGIOSADMIN_USER=nagiosadmin
+      - NAGIOSAMDIN_PASS=nagios
+    volumes:
+      - ./etc/:/opt/nagios/etc/
 
 volumes:
-    stackstorm-mongodb:
-    stackstorm-rabbitmq:
-    stackstorm-redis:
-    stackstorm-postgres:
-    stackstorm-packs:
-    stackstorm-packs-configs:
-    stackstorm-keys:
-    stackstorm-virtualenvs:
-    stackstorm-ssh:
+  stackstorm-mongodb:
+  stackstorm-rabbitmq:
+  stackstorm-redis:
+  stackstorm-postgres:
+  stackstorm-packs:
+  stackstorm-packs-configs:
+  stackstorm-keys:
+  stackstorm-virtualenvs:
+  stackstorm-ssh:
 
 networks:
   public:
